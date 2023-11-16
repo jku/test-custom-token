@@ -16,5 +16,5 @@ runs:
               title: "test",
               body: "",
           })
-          console.log("Created issue #" + issue)
+          console.log("Created issue")
           
