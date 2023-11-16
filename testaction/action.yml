@@ -1,0 +1,7 @@
+name: 'testaction'
+
+runs:
+  using: "composite"
+  steps:
+    - run: echo "test action..."
+      shell: bash
