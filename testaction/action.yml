@@ -3,7 +3,7 @@ name: 'testaction'
 runs:
   using: "composite"
   steps:
-    - run: echo "test action..."
+    - run: echo "test action..." && git config -l
       shell: bash
 
     - id: file-issue
