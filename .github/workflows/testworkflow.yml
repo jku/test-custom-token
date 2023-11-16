@@ -6,9 +6,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     permissions:
-      issues: write
-    env:
-      GITHUB_TOKEN: ${{ secrets.TUF_ON_CI_TOKEN || secrets.GITHUB_TOKEN }}
+      contents: write
     steps:
       - uses: actions/checkout@v1
       - uses: ./testaction
