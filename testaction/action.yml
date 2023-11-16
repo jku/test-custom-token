@@ -3,18 +3,11 @@ name: 'testaction'
 runs:
   using: "composite"
   steps:
-    - run: echo "test action..." && git config -l
+    - uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
+    - run: |
+        echo "test action..." 
+        echo "x" >> xfile
+        git -c user.name=tuf-on-ci -c user.email=41898282+github-actions[bot]@users.noreply.github.com add xfile
+        git -c user.name=tuf-on-ci -c user.email=41898282+github-actions[bot]@users.noreply.github.com commit -a -m "xfile change"
+        git push origin main        
       shell: bash
-
-    - id: file-issue
-      uses: actions/github-script@e69ef5462fd455e02edcaf4dd7708eda96b9eda0
-      with:
-        script: |
-          response = await github.rest.issues.create({
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              title: "test",
-              body: "",
-          })
-          console.log("Created issue")
-          
