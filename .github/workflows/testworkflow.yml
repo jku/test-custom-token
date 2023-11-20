@@ -11,4 +11,4 @@ jobs:
       - uses: actions/checkout@v1
       - uses: ./testaction
         with:
-          token: secrets.TUF_ON_CI_TOKEN
+          token: ${{ secrets.TUF_ON_CI_TOKEN }}
